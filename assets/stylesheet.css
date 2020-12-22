@@ -1,0 +1,39 @@
+.rc-slider-track {
+    position: absolute;
+    left: 0;
+    height: 4px;
+    border-radius: 6px;
+    background-color: #4d5152;
+}
+
+.rc-slider-handle {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+    cursor: -webkit-grab;
+    margin-top: -5px;
+    cursor: grab;
+    border-radius: 50%;
+    border: solid 2px #000000;
+    background-color: #fff;
+    -ms-touch-action: pan-x;
+    touch-action: pan-x;
+}
+
+.rc-slider-handle:hover {
+    border-color: #000000;
+}
+
+.rc-slider-handle:active {
+    box-shadow: 0 0 5px #000000;
+    border-color: #000000;
+}
+
+.rc-slider-handle-click-focused:focus {
+    border-color: #000000;
+}
+
+.rc-slider-dot-active {
+    border-color: #000000;
+}
