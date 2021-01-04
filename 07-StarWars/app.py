@@ -14,6 +14,8 @@ from plotly.subplots import make_subplots
 
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.LUX])
 
+server = app.server
+
 starships = pandas.read_csv("star_wars_data/starships.csv", index_col=0,
                             dtype={'cost_in_credits': float, 'length': float, 'max_atmosphering_speed': float,
                                    'crew': float, 'passengers': float, 'cargo_capacity': float,

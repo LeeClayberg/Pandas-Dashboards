@@ -2,3 +2,6 @@ venv
 fastParquetScript
 00-TestFiles
 11-AppleStore
+*.pyc
+.DS_Store
+.env
