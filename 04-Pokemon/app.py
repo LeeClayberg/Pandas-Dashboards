@@ -1,12 +1,12 @@
-import dash
+from dash import Dash, html, dcc
 import dash_bootstrap_components as dbc
-import dash_core_components as dcc
-import dash_html_components as html
 import pandas
 import plotly.graph_objects as go
 from dash.dependencies import Input, Output
 
-app = dash.Dash(__name__, external_stylesheets=[dbc.themes.LUX])
+app = Dash(__name__, external_stylesheets=[dbc.themes.LUX])
+
+server = app.server
 
 df = pandas.read_csv("pokemon.csv")
 df.loc[df['Name'].str.contains('Mega|Primal'), 'Name'] = df['Name'].str.split("Mega|Primal").str[1]

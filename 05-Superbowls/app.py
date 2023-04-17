@@ -1,14 +1,14 @@
-import dash
+from dash import Dash, html, dcc
 import dash_bootstrap_components as dbc
-import dash_core_components as dcc
-import dash_html_components as html
 import pandas
 import plotly.graph_objects as go
 from dash.dependencies import Input, Output
 from datetime import datetime
 import plotly.express as px
 
-app = dash.Dash(__name__, external_stylesheets=[dbc.themes.LUX])
+app = Dash(__name__, external_stylesheets=[dbc.themes.LUX])
+
+server = app.server
 
 dateparse = lambda x: datetime.strptime(x, '%m/%d/%Y')
 df = pandas.read_csv("superbowl_data.csv", parse_dates=['Date'], date_parser=dateparse)

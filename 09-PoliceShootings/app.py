@@ -1,7 +1,5 @@
-import dash
+from dash import Dash, html, dcc
 import dash_bootstrap_components as dbc
-import dash_core_components as dcc
-import dash_html_components as html
 import pandas
 import math
 import plotly.graph_objects as go
@@ -14,7 +12,9 @@ import plotly.express as px
 colors = ['#50B37C', '#1A877F', '#2E9D80', '#1A6E76', '#7BC875', '#AADA6E', '#E8EC69']
 
 external_stylesheets = [dbc.themes.LUX]
-app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
+app = Dash(__name__, external_stylesheets=external_stylesheets)
+
+server = app.server
 
 df = pandas.read_csv("police_shootings_data.csv", index_col=0)
 df['date'] = pandas.to_datetime(df['date'])

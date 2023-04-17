@@ -1,3 +1,4 @@
+
 from dash import Dash, html, dcc
 import dash_bootstrap_components as dbc
 import pandas
@@ -19,7 +20,7 @@ vehicles = pandas.read_csv("star_wars_data/vehicles.csv", index_col=0,
 planets = pandas.read_csv("star_wars_data/planets.csv", index_col=0)
 characters = pandas.read_csv("star_wars_data/characters.csv", index_col=0)
 
-all_types = [starships, vehicles, planets, characters]
+all = [starships, vehicles, planets, characters]
 all_class = ["starship_class", "vehicle_class"]
 
 categories_left = [["model", "manufacturer", "cost_in_credits", "length", "max_atmosphering_speed", "crew"],
@@ -54,7 +55,7 @@ def format_value(value):
                Output(component_id='slct_ship', component_property='value')],
               [Input(component_id='slct_type', component_property='value')])
 def update_options(type):
-    return [{'label': ship, 'value': ship} for ship in all_types[type].index], all_types[type].index[0]
+    return [{'label': ship, 'value': ship} for ship in all[type].index], all[type].index[0]
 
 
 def pick_color(same, selected, index):
@@ -86,8 +87,8 @@ def count_occurences(type, ):
                Input(component_id='slct_planet', component_property='value'),
                Input(component_id='slct_character', component_property='value')])
 def update_weather_div(n, type, ship, planet, character):
-    type_class = all_types[type].loc[ship, all_class[type]]
-    same_class = all_types[type][all_types[type][all_class[type]] == type_class]
+    type_class = all[type].loc[ship, all_class[type]]
+    same_class = all[type][all[type][all_class[type]] == type_class]
 
     compare_fig = make_subplots(rows=2, cols=3, vertical_spacing=0.3)
 
@@ -208,8 +209,8 @@ def update_table(n, type, selected):
                         ]
                     )
                     for name, data, width, name2, data2, width2
-                    in zip(categories_left[type], all_types[type].loc[selected, categories_left[type]], name_width_left[type],
-                           categories_right[type], all_types[type].loc[selected, categories_right[type]],
+                    in zip(categories_left[type], all[type].loc[selected, categories_left[type]], name_width_left[type],
+                           categories_right[type], all[type].loc[selected, categories_right[type]],
                            name_width_right[type])
                 ], style={'fontSize': 20, 'width': '90%', 'margin': 'auto', 'color': 'white',
                           'backgroundColor': '#222222', 'borderRadius': '10px'})

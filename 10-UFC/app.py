@@ -1,13 +1,13 @@
-import dash
+from dash import Dash, html, dcc
 import math
 import dash_bootstrap_components as dbc
-import dash_core_components as dcc
-import dash_html_components as html
 import pandas
 import plotly.graph_objects as go
 from dash.dependencies import Input, Output
 
-app = dash.Dash(__name__, external_stylesheets=[dbc.themes.LUX])
+app = Dash(__name__, external_stylesheets=[dbc.themes.LUX])
+
+server = app.server
 
 colors = ['#3399FF', '#FF3300']
 weight_class_order = [6, 13, 7, 5, 12, 11, 8, 10, 9, 3, 4, 2, 1]

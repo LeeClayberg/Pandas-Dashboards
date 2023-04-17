@@ -1,17 +1,16 @@
 import time
 from datetime import date
 
-import dash
+from dash import Dash, html, dcc
 import dash_bootstrap_components as dbc
-import dash_core_components as dcc
-import dash_html_components as html
 import pandas
 import pandas_datareader as dr
 import plotly.graph_objects as go
 from dash.dependencies import Input, Output
-from pandas_datareader._utils import RemoteDataError
 
-app = dash.Dash(__name__, external_stylesheets=[dbc.themes.LUX])
+app = Dash(__name__, external_stylesheets=[dbc.themes.LUX])
+
+server = app.server
 
 twenty_years_ago = date.today()
 twenty_years_ago = date(twenty_years_ago.year - 20, twenty_years_ago.month, twenty_years_ago.day)
@@ -52,9 +51,7 @@ def update_graphs(dropdown_values, slider_value):
             change_figure.add_trace(
                 go.Scatter(x=df.index, y=df.Close - df.Open, mode='lines', name=value))
             historical_figure.add_trace(go.Scatter(x=history_df.index, y=history_df.Close, mode='lines', name=value))
-        except KeyError:
-            pass
-        except RemoteDataError:
+        except Exception:
             pass
 
     date_range = str(unix_to_datetime(slider_value[0]).strftime('%b %d')) + " - " + str(

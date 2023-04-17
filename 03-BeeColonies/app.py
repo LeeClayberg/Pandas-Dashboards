@@ -1,13 +1,12 @@
 import pandas as pd
 import plotly.express as px
-
-import dash
-import dash_core_components as dcc
-import dash_html_components as html
+from dash import Dash, html, dcc
 from dash.dependencies import Input, Output
 import dash_bootstrap_components as dbc
 
-app = dash.Dash(__name__, external_stylesheets=[dbc.themes.LUX])
+app = Dash(__name__, external_stylesheets=[dbc.themes.LUX])
+
+server = app.server
 
 # Data
 df = pd.read_csv("intro_bees.csv")
