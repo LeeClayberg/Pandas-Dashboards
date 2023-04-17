@@ -3,13 +3,10 @@ import dash_bootstrap_components as dbc
 import dash_core_components as dcc
 import dash_html_components as html
 import pandas
-import numpy as np
 import math
 import plotly.graph_objects as go
 from dash.dependencies import Input, Output
-from datetime import datetime
 import plotly.express as px
-from plotly.subplots import make_subplots
 
 # https://www.kaggle.com/ahsen1330/us-police-shootings
 
