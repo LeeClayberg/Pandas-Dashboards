@@ -1,5 +1,6 @@
 
 from dash import Dash, html, dcc
+import dash as d
 import dash_bootstrap_components as dbc
 import pandas
 import plotly.graph_objects as go
@@ -231,7 +232,8 @@ app.layout = html.Div([
     dbc.Row([
         html.Div([
             html.Img(
-                src='https://static.wixstatic.com/media/f94624_7cd22cb4e9b343b99b0b182dfd2ca815~mv2.png',
+                src='https://storage.googleapis.com/lee-clayberg.firebasestorage.app/projects/starWarsDashboard'
+                    '/images/lightsaberRed.png',
                 style={'width': 300, "position": 'relative', 'zIndex': 10, 'margin': "0px 5px"}),
         ], style={'textAlign': 'right', 'margin': "48px 0px 10px", "width": '40%'}),
         html.Div([
@@ -242,7 +244,8 @@ app.layout = html.Div([
         ], style={'textAlign': 'center', 'margin': "0px 0px 10px", "width": '20%'}),
         html.Div([
             html.Img(
-                src='https://static.wixstatic.com/media/f94624_0d521d1e904d4e32adca369f4a172e12~mv2.png',
+                src='https://storage.googleapis.com/lee-clayberg.firebasestorage.app/projects/starWarsDashboard'
+                    '/images/lightsaberBlue.png',
                 style={'width': 300, "position": 'relative', 'zIndex': 10, 'margin': "0px 5px"}),
         ], style={'textAlign': 'left', 'margin': "48px 0px 10px", "width": '40%'})
     ]),

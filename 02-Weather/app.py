@@ -13,14 +13,18 @@ categories_left = ["wind_speed", "precip", "humidity", "observation_time"]
 categories_right = ["cloudcover", "uv_index", "visibility", "pressure"]
 units_left = [" kph", " mm", "%", ""]
 units_right = ["%", " of 10", " km", " mb"]
-icons_left = ["https://static.wixstatic.com/media/f94624_7336ef703df545be967ee2906e524f34~mv2.png",
-              "https://static.wixstatic.com/media/f94624_f3f07789afd742f58e22b0d6272825d0~mv2.png",
-              "https://static.wixstatic.com/media/f94624_16e38675e2a74ee9b6cd5c18ef0fdd35~mv2.png",
-              "https://static.wixstatic.com/media/f94624_5235c766dc2d410abee6d40633834022~mv2.png"]
-icons_right = ["https://static.wixstatic.com/media/f94624_8bdc3752dae149d4aace679a6510a743~mv2.png",
-               "https://static.wixstatic.com/media/f94624_0c612c07884f44ad976db329c93ad810~mv2.png",
-               "https://static.wixstatic.com/media/f94624_dc0932d2f06c4f728efa227e2da7c884~mv2.png",
-               "https://static.wixstatic.com/media/f94624_0680eec3fe3b4814901612d7b1f5272c~mv2.png"]
+icons_left = [
+    "https://storage.googleapis.com/lee-clayberg.firebasestorage.app/projects/weatherDashboard/icons/wind.png",
+    "https://storage.googleapis.com/lee-clayberg.firebasestorage.app/projects/weatherDashboard/icons/precipitation.png",
+    "https://storage.googleapis.com/lee-clayberg.firebasestorage.app/projects/weatherDashboard/icons/humidity.png",
+    "https://storage.googleapis.com/lee-clayberg.firebasestorage.app/projects/weatherDashboard/icons/time.png"
+]
+icons_right = [
+    "https://storage.googleapis.com/lee-clayberg.firebasestorage.app/projects/weatherDashboard/icons/cloudCover.png",
+    "https://storage.googleapis.com/lee-clayberg.firebasestorage.app/projects/weatherDashboard/icons/uvIndex.png",
+    "https://storage.googleapis.com/lee-clayberg.firebasestorage.app/projects/weatherDashboard/icons/visibility.png",
+    "https://storage.googleapis.com/lee-clayberg.firebasestorage.app/projects/weatherDashboard/icons/pressure.png"
+]
 
 
 def format_name(name):

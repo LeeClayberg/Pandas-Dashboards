@@ -87,7 +87,8 @@ app.layout = html.Div([
     ),
     html.H1('UFO Sightings', style={'padding': '20px', 'textAlign': 'center', 'color': 'black', 'fontSize': 40}),
     html.Div([
-        html.Img(src='https://static.wixstatic.com/media/f94624_2bbdaaf1395e4965859f9e9944bb8f60~mv2.png',
+        html.Img(src='https://storage.googleapis.com/lee-clayberg.firebasestorage.app/projects/ufoSightingsDashboard'
+                     '/icons/ufo.png',
                  style={'width': 100})
     ], style={'textAlign': 'center', 'margin': "-25px 0px 40px"}),
     dbc.Row([
